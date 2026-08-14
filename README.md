@@ -108,6 +108,6 @@ The bundled Dolphin animation assets are derived from the official Flipper Zero 
 
 ## Acknowledgements / 致谢
 
-Thanks to [Sch-ray/AI_State_Display](https://github.com/Sch-ray/AI_State_Display) for project ideas and animation design inspiration.
+Thanks to [Sch-ray/AI_State_Display](https://github.com/Sch-ray/AI_State_Display) for project ideas and inspiration.
 
 感谢 [Sch-ray/AI_State_Display](https://github.com/Sch-ray/AI_State_Display) 项目提供思路参考。
