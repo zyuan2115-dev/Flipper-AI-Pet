@@ -1,9 +1,9 @@
-$ErrorActionPreference = "Stop"
-
 param(
   [ValidateSet("x64", "arm64")]
   [string]$Arch
 )
+
+$ErrorActionPreference = "Stop"
 
 $Root = Split-Path -Parent $PSScriptRoot
 Set-Location $Root
