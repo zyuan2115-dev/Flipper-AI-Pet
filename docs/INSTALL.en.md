@@ -6,7 +6,7 @@ This repository already includes ready-to-use artifacts:
 
 - macOS: `dist/Flipper Pet.app`, `dist/Flipper-Pet-macOS-arm64.dmg`
 * Windows x64 (Intel / AMD): `dist/FlipperPet-Windows-x64.exe`, `dist/Flipper-Pet-Windows-x64.zip`
-* Windows ARM64: `dist/FlipperPet.exe`, `dist/Flipper-Pet-Windows-arm64.zip`
+* Windows ARM64: `dist/FlipperPet-Windows-arm64.exe`, `dist/Flipper-Pet-Windows-arm64.zip`
 - Flipper app: `flipper/dist/ai_pet.fap`
 
 ## 2. Requirements
@@ -35,12 +35,14 @@ This repository already includes ready-to-use artifacts:
 
 For mainstream Intel / AMD PCs, use the Windows x64 package. The Windows ARM64 package is only for Windows on ARM devices.
 
-Use the ZIP installer, which contains both components:
+Prefer the one-click installer:
 
-1. Intel / AMD: extract `dist/Flipper-Pet-Windows-x64.zip` and run `install.ps1` in PowerShell.
-2. Windows on ARM: extract `dist/Flipper-Pet-Windows-arm64.zip` and run `install.ps1` in PowerShell.
+1. Intel / AMD: run `dist/FlipperPet-Windows-x64.exe`.
+2. Windows on ARM: run `dist/FlipperPet-Windows-arm64.exe`.
 
-The installer registers both the Flipper Pet console and the `flipper-state` BLE Bridge. Running `FlipperPet.exe` by itself does not include the Bridge.
+The installer deploys both the Flipper Pet console and the `flipper-state` BLE Bridge, then registers the current-user startup entries.
+
+For manual install or repair, the ZIP package still contains both components and `install.ps1`.
 
 Then open `http://127.0.0.1:8781/`.
 

@@ -31,7 +31,6 @@ jobs:
         shell: pwsh
         run: |
           ./packaging/build_windows.ps1 -Arch x64
-          Copy-Item dist/FlipperPet.exe dist/FlipperPet-Windows-x64.exe
 
       - name: Verify Windows package contents
         shell: pwsh

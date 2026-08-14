@@ -40,7 +40,7 @@ def platforms() -> list[dict]:
     current = platform.system()
     return [
         {"name": "macOS", "current": current == "Darwin", "status": "可安装", "service": "LaunchAgent 用户服务", "package": ".app / .dmg"},
-        {"name": "Windows", "current": current == "Windows", "status": "可安装", "service": "当前用户启动项", "package": "ARM64 EXE / ZIP"},
+        {"name": "Windows", "current": current == "Windows", "status": "可安装", "service": "当前用户启动项", "package": "一键安装 EXE / ZIP"},
         {"name": "Linux", "current": current == "Linux", "status": "方案已定义", "service": "systemd --user", "package": ".deb / AppImage"},
     ]
 

@@ -6,7 +6,7 @@
 
 - macOS：`dist/Flipper Pet.app`、`dist/Flipper-Pet-macOS-arm64.dmg`
 * Windows x64（Intel / AMD）：`dist/FlipperPet-Windows-x64.exe`、`dist/Flipper-Pet-Windows-x64.zip`
-* Windows ARM64：`dist/FlipperPet.exe`、`dist/Flipper-Pet-Windows-arm64.zip`
+* Windows ARM64：`dist/FlipperPet-Windows-arm64.exe`、`dist/Flipper-Pet-Windows-arm64.zip`
 - Flipper 应用：`flipper/dist/ai_pet.fap`
 
 ## 2. 使用前准备
@@ -35,12 +35,14 @@
 
 大多数 Intel / AMD Windows 电脑请选择 Windows x64 包。Windows ARM64 包仅适用于 Windows on ARM 设备。
 
-推荐使用 ZIP 安装包（其中包含控制台和 BLE Bridge 两个组件）：
+推荐优先使用一键安装 EXE：
 
-1. Intel / AMD：解压 `dist/Flipper-Pet-Windows-x64.zip`，右键以 PowerShell 运行 `install.ps1`
-2. Windows on ARM：解压 `dist/Flipper-Pet-Windows-arm64.zip`，右键以 PowerShell 运行 `install.ps1`
+1. Intel / AMD：直接运行 `dist/FlipperPet-Windows-x64.exe`
+2. Windows on ARM：直接运行 `dist/FlipperPet-Windows-arm64.exe`
 
-安装脚本会同时注册 Flipper Pet 控制台和 `flipper-state` BLE Bridge 的当前用户启动项。仅运行单独的 `FlipperPet.exe` 不会包含 BLE Bridge。
+安装器会自动安装 Flipper Pet 控制台和 `flipper-state` BLE Bridge，并注册当前用户启动项。
+
+如需手动安装或修复，也可以解压 ZIP 后运行 `install.ps1`。
 
 启动后打开：`http://127.0.0.1:8781/`
 

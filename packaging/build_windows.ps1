@@ -22,6 +22,11 @@ python -m PyInstaller --clean --noconfirm --onefile --windowed --name "FlipperPe
   --add-data "flipper/dist/ai_pet.fap;flipper/dist" `
   --hidden-import serial --hidden-import serial.tools.list_ports packaging/main.py
 python -m PyInstaller --clean --noconfirm --onefile --console --name "flipper-state" --paths "flipper/mac-client/src" packaging/bridge_main.py
+python -m PyInstaller --clean --noconfirm --onefile --windowed --name "FlipperPetInstaller" `
+  --add-data "dist/FlipperPet.exe;." `
+  --add-data "dist/flipper-state.exe;." packaging/windows/installer_main.py
+
+Copy-Item "dist/FlipperPetInstaller.exe" "dist/FlipperPet-Windows-$Arch.exe" -Force
 
 $ZipName = "dist/Flipper-Pet-Windows-$Arch.zip"
 Compress-Archive -Path "dist/FlipperPet.exe", "dist/flipper-state.exe", "packaging/windows/install.ps1" `
@@ -36,6 +41,10 @@ try {
   }
 } finally {
   $Archive.Dispose()
+}
+
+if (-not (Test-Path "dist/FlipperPet-Windows-$Arch.exe")) {
+  throw "Windows one-click installer was not generated"
 }
 
 Write-Host "$Root\\$ZipName"

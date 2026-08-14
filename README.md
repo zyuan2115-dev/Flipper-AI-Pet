@@ -27,10 +27,11 @@ Flipper AI Pet 用于连接 Flipper Zero 与桌面 AI 工具，通过灯光、�
 - Windows ARM64 package / Windows ARM64 安装包: [dist/Flipper-Pet-Windows-arm64.zip](dist/Flipper-Pet-Windows-arm64.zip)
 - Flipper Zero app / Flipper Zero 应用: [flipper/dist/ai_pet.fap](flipper/dist/ai_pet.fap)
 
-Optional raw desktop binaries / 可选裸程序文件:
+Desktop installers / 桌面安装包:
 
 - macOS app bundle: [dist/Flipper Pet.app](dist/Flipper%20Pet.app)
-- Windows ZIP packages include both the console and the required BLE Bridge. Run `install.ps1` after extraction.
+- Windows one-click installer: [dist/FlipperPet-Windows-x64.exe](dist/FlipperPet-Windows-x64.exe)
+- Windows ZIP packages still include both the console and the required BLE Bridge for manual install or repair.
 
 ## Windows Architecture / Windows 架构选择
 

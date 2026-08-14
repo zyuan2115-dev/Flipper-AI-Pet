@@ -24,20 +24,20 @@ If the environment can be detected directly, do that instead of asking. Only ask
 - macOS Apple Silicon: use `dist/Flipper-Pet-macOS-arm64.dmg`.
 - Windows Intel / AMD: use `dist/Flipper-Pet-Windows-x64.zip`.
 - Windows on ARM: use `dist/Flipper-Pet-Windows-arm64.zip`.
-- Do not tell Windows users to install by launching a standalone `.exe` when the ZIP package is available.
+- Do not tell Windows users to launch the raw `FlipperPet.exe` binary as the primary install flow.
 
 ## Windows rules
 
-- Preferred flow: extract the ZIP, then run `install.ps1`.
+- Preferred flow: run the one-click Windows installer EXE for the correct architecture.
+- If the user needs manual install or repair, extract the ZIP and run `install.ps1`.
 - If the user asks how to run `.ps1`, instruct them to open PowerShell in the extracted folder and run:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\install.ps1
 ```
 
-- Explain that the ZIP contains both `FlipperPet.exe` and `flipper-state.exe`.
-- Explain that `install.ps1` registers the current-user startup entries for the console and BLE Bridge.
-- If the user only double-clicks `FlipperPet.exe`, the app may still work when `flipper-state.exe` is in the same folder, but this is not the preferred install path.
+- Explain that the one-click installer installs both `FlipperPet.exe` and `flipper-state.exe`.
+- Explain that both the one-click installer and `install.ps1` register the current-user startup entries for the console and BLE Bridge.
 
 ### Windows Bridge recovery
 

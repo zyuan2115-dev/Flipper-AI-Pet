@@ -65,8 +65,8 @@ def connect_bridge() -> dict:
     if not executable:
         if os.name == "nt":
             raise RuntimeError(
-                "未找到 flipper-state Bridge。请重新下载 Windows ZIP 安装包，"
-                "解压后运行 install.ps1；单独运行 FlipperPet.exe 不包含 Bridge。"
+                "未找到 flipper-state Bridge。请重新下载安装 Windows 一键安装 EXE，"
+                "或重新下载 ZIP 后运行 install.ps1。"
             )
         raise RuntimeError("未找到 flipper-state Bridge，请先安装电脑端组件")
     subprocess.Popen(
