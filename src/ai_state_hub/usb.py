@@ -27,7 +27,16 @@ def _ports() -> list[str]:
     if os.name == "nt":
         try:
             from serial.tools import list_ports
-            return [port.device for port in list_ports.comports() if "Flipper" in (port.description or "")]
+            matches = []
+            for port in list_ports.comports():
+                description = " ".join(
+                    value or ""
+                    for value in (port.description, port.manufacturer, port.product, port.hwid)
+                ).lower()
+                flipper_usb_id = port.vid == 0x0483 and port.pid == 0x5740
+                if "flipper" in description or flipper_usb_id or "0483:5740" in description:
+                    matches.append(port.device)
+            return sorted(set(matches))
         except ImportError:
             return []
     patterns = ("/dev/cu.usbmodemflip_*", "/dev/ttyACM*")
