@@ -63,6 +63,11 @@ def connect_bridge() -> dict:
         executable = str(candidates[0]) if candidates else None
         executable = next((str(path) for path in candidates if path.is_file()), None)
     if not executable:
+        if os.name == "nt":
+            raise RuntimeError(
+                "未找到 flipper-state Bridge。请重新下载 Windows ZIP 安装包，"
+                "解压后运行 install.ps1；单独运行 FlipperPet.exe 不包含 Bridge。"
+            )
         raise RuntimeError("未找到 flipper-state Bridge，请先安装电脑端组件")
     subprocess.Popen(
         [executable, "service"],

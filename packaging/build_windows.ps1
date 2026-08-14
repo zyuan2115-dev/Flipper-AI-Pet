@@ -27,4 +27,15 @@ $ZipName = "dist/Flipper-Pet-Windows-$Arch.zip"
 Compress-Archive -Path "dist/FlipperPet.exe", "dist/flipper-state.exe", "packaging/windows/install.ps1" `
   -DestinationPath $ZipName -Force
 
+# A ZIP without the bridge can install successfully but cannot control AI Pet.
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+$Archive = [System.IO.Compression.ZipFile]::OpenRead((Resolve-Path $ZipName))
+try {
+  if ($null -eq $Archive.GetEntry("flipper-state.exe")) {
+    throw "Windows package is missing flipper-state.exe"
+  }
+} finally {
+  $Archive.Dispose()
+}
+
 Write-Host "$Root\\$ZipName"

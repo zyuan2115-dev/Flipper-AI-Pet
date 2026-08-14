@@ -30,8 +30,7 @@ Flipper AI Pet 用于连接 Flipper Zero 与桌面 AI 工具，通过灯光、�
 Optional raw desktop binaries / 可选裸程序文件:
 
 - macOS app bundle: [dist/Flipper Pet.app](dist/Flipper%20Pet.app)
-- Windows x64 executable: [dist/FlipperPet-Windows-x64.exe](dist/FlipperPet-Windows-x64.exe)
-- Windows ARM64 executable: [dist/FlipperPet.exe](dist/FlipperPet.exe)
+- Windows ZIP packages include both the console and the required BLE Bridge. Run `install.ps1` after extraction.
 
 ## Windows Architecture / Windows 架构选择
 
