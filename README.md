@@ -98,17 +98,13 @@ Then open `http://127.0.0.1:8781/`. / 然后打开 `http://127.0.0.1:8781/`。
 
 ## License / 许可证
 
-This repository uses multiple licenses:
+This repository is licensed under [GNU General Public License v3.0](LICENSE).
 
-- Desktop bridge, Web console, Python tooling, and packaging files: [Apache-2.0](LICENSE)
-- Flipper app, bundled Dolphin animation assets, and files under `flipper/`: [GPL-3.0](flipper/LICENSE)
-- Asset source and attribution: [flipper/NOTICE.md](flipper/NOTICE.md)
+The bundled Dolphin animation assets are derived from the official Flipper Zero firmware; see [flipper/NOTICE.md](flipper/NOTICE.md) for source and attribution.
 
-本仓库采用多许可证结构：
+本仓库统一采用 [GNU General Public License v3.0](LICENSE) 授权。
 
-- 桌面 Bridge、Web 控制台、Python 工具和打包文件：[Apache-2.0](LICENSE)
-- Flipper 应用、内置 Dolphin 动画资源及 `flipper/` 下的文件：[GPL-3.0](flipper/LICENSE)
-- 动画资源来源与署名：[flipper/NOTICE.md](flipper/NOTICE.md)
+内置 Dolphin 动画资源来源于官方 Flipper Zero 固件，来源与署名详见 [flipper/NOTICE.md](flipper/NOTICE.md)。
 
 ## Acknowledgements / 致谢
 
