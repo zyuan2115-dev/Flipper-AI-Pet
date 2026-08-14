@@ -35,10 +35,12 @@
 
 大多数 Intel / AMD Windows 电脑请选择 Windows x64 包。Windows ARM64 包仅适用于 Windows on ARM 设备。
 
-可选两种方式：
+推荐使用 ZIP 安装包（其中包含控制台和 BLE Bridge 两个组件）：
 
-1. Intel / AMD：直接运行 `dist/FlipperPet-Windows-x64.exe`，或解压 `dist/Flipper-Pet-Windows-x64.zip`
-2. Windows on ARM：直接运行 `dist/FlipperPet.exe`，或解压 `dist/Flipper-Pet-Windows-arm64.zip`
+1. Intel / AMD：解压 `dist/Flipper-Pet-Windows-x64.zip`，右键以 PowerShell 运行 `install.ps1`
+2. Windows on ARM：解压 `dist/Flipper-Pet-Windows-arm64.zip`，右键以 PowerShell 运行 `install.ps1`
+
+安装脚本会同时注册 Flipper Pet 控制台和 `flipper-state` BLE Bridge 的当前用户启动项。仅运行单独的 `FlipperPet.exe` 不会包含 BLE Bridge。
 
 启动后打开：`http://127.0.0.1:8781/`
 

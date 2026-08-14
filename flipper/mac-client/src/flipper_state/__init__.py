@@ -3,6 +3,7 @@ import asyncio
 import hashlib
 import hmac
 import os
+import socket
 from pathlib import Path
 
 from bleak import BleakClient, BleakScanner
@@ -14,6 +15,8 @@ TX_UUID = "6e400003-b5a3-f393-e0a9-e50e24dcca9e"
 ADVERTISING_UUID = "0000a15a-0000-1000-8000-00805f9b34fb"
 STATES = ("idle", "thinking", "running", "approval", "success", "error")
 SOCKET_PATH = Path(os.environ.get("FLIPPER_STATE_SOCKET", "/tmp/flipper-state.sock"))
+TCP_HOST = os.environ.get("FLIPPER_STATE_HOST", "127.0.0.1")
+TCP_PORT = int(os.environ.get("FLIPPER_STATE_PORT", "39871"))
 CACHE_PATH = Path(os.environ.get("FLIPPER_STATE_DEVICE_CACHE", "~/.flipper-state-device")).expanduser()
 KEY_PATH = Path(os.environ.get("FLIPPER_STATE_KEY", "~/.flipper-pet/device.key")).expanduser()
 
@@ -50,7 +53,13 @@ async def run_daemon(timeout: float) -> None:
         raise RuntimeError("电脑尚未绑定 AI Pet；请先在 Web 页面点击“绑定电脑”")
     key = KEY_PATH.read_bytes()
     device = await find_flipper(timeout)
-    if SOCKET_PATH.exists():
+    if os.name == "nt":
+        try:
+            with socket.create_connection((TCP_HOST, TCP_PORT), timeout=0.2):
+                raise RuntimeError("flipper-state daemon is already running")
+        except OSError:
+            pass
+    elif SOCKET_PATH.exists():
         try:
             reader, writer = await asyncio.open_unix_connection(SOCKET_PATH)
             writer.close()
@@ -138,7 +147,10 @@ async def run_daemon(timeout: float) -> None:
             writer.close()
             await writer.wait_closed()
 
-        server = await asyncio.start_unix_server(handle_command, path=SOCKET_PATH)
+        if os.name == "nt":
+            server = await asyncio.start_server(handle_command, TCP_HOST, TCP_PORT)
+        else:
+            server = await asyncio.start_unix_server(handle_command, path=SOCKET_PATH)
         try:
             while client.is_connected:
                 await asyncio.sleep(0.5)
@@ -160,7 +172,10 @@ async def run_service(timeout: float, retry_delay: float) -> None:
 
 async def send_local_state(state: str) -> None:
     try:
-        reader, writer = await asyncio.open_unix_connection(SOCKET_PATH)
+        if os.name == "nt":
+            reader, writer = await asyncio.open_connection(TCP_HOST, TCP_PORT)
+        else:
+            reader, writer = await asyncio.open_unix_connection(SOCKET_PATH)
     except (ConnectionRefusedError, FileNotFoundError) as error:
         raise RuntimeError(
             "daemon is not running; start it with: flipper-state daemon"
