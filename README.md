@@ -99,3 +99,9 @@ Then open `http://127.0.0.1:8781/`. / 然后打开 `http://127.0.0.1:8781/`。
 ## License / 许可证
 
 [Apache-2.0](LICENSE)
+
+## Acknowledgements / 致谢
+
+Thanks to [Sch-ray/AI_State_Display](https://github.com/Sch-ray/AI_State_Display) for the project ideas and reference implementations for part of the animation code.
+
+感谢 [Sch-ray/AI_State_Display](https://github.com/Sch-ray/AI_State_Display) 项目提供思路，并为部分动画代码提供参考。
