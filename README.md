@@ -43,7 +43,7 @@ Desktop installers / 桌面安装包:
 1. Install the desktop app for your operating system and processor architecture. / 安装与你的操作系统和处理器架构对应的桌面程序。
 2. Connect Flipper Zero over USB-C and install `ai_pet.fap` from the local Web console. / 用 USB-C 连接 Flipper Zero，在本地 Web 控制台安装 `ai_pet.fap`。
 3. Bind the computer once, then open `Apps -> Tools -> AI Pet` on the Flipper. / 首次绑定电脑后，在 Flipper 打开 `Apps -> Tools -> AI Pet`。
-4. Open the local console at `http://127.0.0.1:8781/`. / 打开本地控制台 `http://127.0.0.1:8781/`。
+4. Open the local console at `http://127.0.0.1:7800/`. / 打开本地控制台 `http://127.0.0.1:7800/`。
 5. Install the AI integration you want from the Web console. / 在 Web 控制台安装所需 AI 工具的接入配置。
 
 ## Current Tool Support / 当前工具支持
@@ -69,10 +69,10 @@ Each AI state can be customized from the desktop side with color, brightness, li
 ## Run From Source / 从源码运行
 
 ```bash
-PYTHONPATH=src python3 -m ai_state_hub.app serve --port 8781
+PYTHONPATH=src python3 -m ai_state_hub.app serve --port 7800
 ```
 
-Then open `http://127.0.0.1:8781/`. / 然后打开 `http://127.0.0.1:8781/`。
+Then open `http://127.0.0.1:7800/`. / 然后打开 `http://127.0.0.1:7800/`。
 
 ## Build / 打包
 

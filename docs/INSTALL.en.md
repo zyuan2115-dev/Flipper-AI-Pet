@@ -29,7 +29,7 @@ This repository already includes ready-to-use artifacts:
 1. Open `dist/Flipper-Pet-macOS-arm64.dmg`
 2. Drag `Flipper Pet.app` into `Applications`
 3. Launch the app
-4. Open the local console at `http://127.0.0.1:8781/`
+4. Open the local console at `http://127.0.0.1:7800/`
 
 ### Windows
 
@@ -44,14 +44,14 @@ The installer deploys both the Flipper Pet console and the `flipper-state` BLE B
 
 For manual install or repair, the ZIP package still contains both components and `install.ps1`.
 
-Then open `http://127.0.0.1:8781/`.
+Then open `http://127.0.0.1:7800/`.
 
 ## 4. Install the Flipper AI Pet App
 
 ### Install from the Web Console
 
 1. Connect Flipper Zero over USB-C
-2. Open `http://127.0.0.1:8781/`
+2. Open `http://127.0.0.1:7800/`
 3. In the `USB / USB-C` section, click `Install` or `Update`
 
 The app is written to:
@@ -114,10 +114,10 @@ These settings are stored on the computer, not inside the Flipper firmware.
 
 ## 10. Troubleshooting
 
-### `8781` cannot be opened
+### `7800` cannot be opened
 
 - make sure the app is running
-- make sure no other process is occupying `127.0.0.1:8781`
+- make sure no other process is occupying `127.0.0.1:7800`
 
 ### AI Pet stays on `Waiting for secure link`
 
