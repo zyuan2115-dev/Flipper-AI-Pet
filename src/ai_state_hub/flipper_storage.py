@@ -42,7 +42,10 @@ class FlipperStorage:
     EOL = "\r\n"
 
     def __init__(self, port_name: str, chunk_size: int = 8192) -> None:
-        self.port = serial.Serial(port=port_name, baudrate=115200, timeout=2)
+        self.port = serial.Serial()
+        self.port.port = port_name
+        self.port.baudrate = 115200
+        self.port.timeout = 2
         self.read = _BufferedRead(self.port)
         self.chunk_size = chunk_size
 
