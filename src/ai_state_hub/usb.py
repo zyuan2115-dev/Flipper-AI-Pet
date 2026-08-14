@@ -16,7 +16,6 @@ LEGACY_DEVICE_FAP = "/ext/apps/Tools/ai_state_display.fap"
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 BUNDLE_ROOT = Path(getattr(sys, "_MEIPASS", PROJECT_ROOT))
 LOCAL_FAP = BUNDLE_ROOT / "flipper" / "dist" / "ai_pet.fap"
-UFBT_ROOT = Path.home() / ".ufbt" / "current" / "scripts"
 USB_LOCK = threading.Lock()
 USB_CACHE_SECONDS = 10
 USB_CACHE: tuple[float, dict] | None = None
@@ -44,12 +43,7 @@ def _ports() -> list[str]:
 
 
 def _storage_class():
-    if not UFBT_ROOT.exists():
-        raise RuntimeError("未找到 uFBT；请先安装 uFBT 或使用正式独立安装包")
-    root = str(UFBT_ROOT)
-    if root not in sys.path:
-        sys.path.insert(0, root)
-    from flipper.storage import FlipperStorage, FlipperStorageOperations
+    from .flipper_storage import FlipperStorage, FlipperStorageOperations
     return FlipperStorage, FlipperStorageOperations
 
 

@@ -10,7 +10,7 @@ datas = [
 a = Analysis(
     [str(root / "src" / "ai_state_hub" / "app.py")],
     pathex=[str(root / "src")],
-    binaries=[], datas=datas, hiddenimports=["serial", "serial.tools.list_ports"],
+    binaries=[], datas=datas, hiddenimports=["serial", "serial.tools.list_ports", "ai_state_hub.flipper_storage"],
     hookspath=[], hooksconfig={}, runtime_hooks=[], excludes=[], noarchive=False,
 )
 pyz = PYZ(a.pure)

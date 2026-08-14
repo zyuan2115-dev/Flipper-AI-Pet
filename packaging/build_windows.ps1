@@ -20,7 +20,7 @@ python -m pip install --upgrade pyinstaller pyserial "bleak>=1.0,<2"
 python -m PyInstaller --clean --noconfirm --onefile --windowed --name "FlipperPet" --paths src `
   --add-data "src/ai_state_hub/static;ai_state_hub/static" `
   --add-data "flipper/dist/ai_pet.fap;flipper/dist" `
-  --hidden-import serial --hidden-import serial.tools.list_ports packaging/main.py
+  --hidden-import serial --hidden-import serial.tools.list_ports --hidden-import ai_state_hub.flipper_storage packaging/main.py
 python -m PyInstaller --clean --noconfirm --onefile --console --name "flipper-state" --paths "flipper/mac-client/src" packaging/bridge_main.py
 python -m PyInstaller --clean --noconfirm --onefile --windowed --name "FlipperPetInstaller" `
   --add-data "dist/FlipperPet.exe;." `
