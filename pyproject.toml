@@ -1,0 +1,16 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ai-state-hub"
+version = "0.1.0"
+description = "Local AI lifecycle hub and Flipper Zero status console"
+requires-python = ">=3.11"
+dependencies = ["pyserial>=3.5"]
+
+[project.scripts]
+ai-state-hub = "ai_state_hub.app:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ai_state_hub"]

@@ -1,0 +1,12 @@
+[Unit]
+Description=Flipper Pet AI State Hub
+After=bluetooth.target
+
+[Service]
+Type=simple
+ExecStart=@EXECUTABLE@ serve --port @PORT@
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

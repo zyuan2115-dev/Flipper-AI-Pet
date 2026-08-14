@@ -1,0 +1,47 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/*
+!/dist/Flipper Pet.app
+!/dist/Flipper-Pet-macOS-arm64.dmg
+!/dist/Flipper-Pet-Windows-arm64.zip
+!/dist/FlipperPet.exe
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
+__pycache__/
+*.pyc
+flipper/dist/*
+!flipper/dist/ai_pet.fap
+flipper/mac-client/.venv/
+flipper/firmware-downloads/
+flipper/backups/
+$probe_settings

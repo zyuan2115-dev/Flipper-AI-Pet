@@ -1,0 +1,2 @@
+frame_count=38
+frame_rate=2

@@ -1,0 +1,2 @@
+frame_count=65
+frame_rate=2
