@@ -2,6 +2,12 @@
 
 This directory contains the Flipper Zero application source for AI Pet.
 
+## License
+
+This directory is licensed under [GPL-3.0](LICENSE). The bundled Dolphin animation frames are derived from the official Flipper Zero firmware assets; see [NOTICE.md](NOTICE.md).
+
+本目录采用 [GPL-3.0](LICENSE) 授权。内置 Dolphin 动画帧来源于官方 Flipper Zero 固件资源，详见 [NOTICE.md](NOTICE.md)。
+
 ## Key Files
 
 - [ai_state_display.c](ai_state_display.c)

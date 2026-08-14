@@ -98,7 +98,17 @@ Then open `http://127.0.0.1:8781/`. / 然后打开 `http://127.0.0.1:8781/`。
 
 ## License / 许可证
 
-[Apache-2.0](LICENSE)
+This repository uses multiple licenses:
+
+- Desktop bridge, Web console, Python tooling, and packaging files: [Apache-2.0](LICENSE)
+- Flipper app, bundled Dolphin animation assets, and files under `flipper/`: [GPL-3.0](flipper/LICENSE)
+- Asset source and attribution: [flipper/NOTICE.md](flipper/NOTICE.md)
+
+本仓库采用多许可证结构：
+
+- 桌面 Bridge、Web 控制台、Python 工具和打包文件：[Apache-2.0](LICENSE)
+- Flipper 应用、内置 Dolphin 动画资源及 `flipper/` 下的文件：[GPL-3.0](flipper/LICENSE)
+- 动画资源来源与署名：[flipper/NOTICE.md](flipper/NOTICE.md)
 
 ## Acknowledgements / 致谢
 
