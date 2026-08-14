@@ -114,4 +114,4 @@ This repository uses multiple licenses:
 
 Thanks to [Sch-ray/AI_State_Display](https://github.com/Sch-ray/AI_State_Display) for project ideas and animation design inspiration.
 
-感谢 [Sch-ray/AI_State_Display](https://github.com/Sch-ray/AI_State_Display) 项目提供思路和动画效果设计参考。
+感谢 [Sch-ray/AI_State_Display](https://github.com/Sch-ray/AI_State_Display) 项目提供思路参考。
