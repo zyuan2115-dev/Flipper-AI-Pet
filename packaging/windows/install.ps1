@@ -17,7 +17,9 @@ if (-not (Test-Path $SourceBridge)) { throw "flipper-state.exe was not found nex
 Copy-Item -Path $SourceBridge -Destination $Bridge -Force
 
 $LaunchCommand = "`"$Exe`" serve --host 127.0.0.1 --port $Port"
-New-Item -Path $RunKey -Force | Out-Null
+if (-not (Test-Path $RunKey)) {
+  New-Item -Path $RunKey | Out-Null
+}
 New-ItemProperty -Path $RunKey -Name "FlipperPet" -Value $LaunchCommand -PropertyType String -Force | Out-Null
 New-ItemProperty -Path $RunKey -Name "FlipperPetBridge" -Value "`"$Bridge`" service" -PropertyType String -Force | Out-Null
 Start-Process -FilePath $Exe -ArgumentList @("serve", "--host", "127.0.0.1", "--port", $Port)
