@@ -1,0 +1,50 @@
+name: Build Windows x64
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build-windows-x64:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        shell: pwsh
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pyinstaller pyserial
+
+      - name: Build Windows x64 package
+        shell: pwsh
+        run: |
+          ./packaging/build_windows.ps1 -Arch x64
+          Copy-Item dist/FlipperPet.exe dist/FlipperPet-Windows-x64.exe
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Flipper-Pet-Windows-x64
+          path: |
+            dist/FlipperPet-Windows-x64.exe
+            dist/Flipper-Pet-Windows-x64.zip
+
+      - name: Upload release assets
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/FlipperPet-Windows-x64.exe
+            dist/Flipper-Pet-Windows-x64.zip

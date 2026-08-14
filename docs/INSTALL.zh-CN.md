@@ -5,7 +5,7 @@
 本仓库已经包含可直接使用的发布产物：
 
 - macOS：`dist/Flipper Pet.app`、`dist/Flipper-Pet-macOS-arm64.dmg`
-- Windows：`dist/FlipperPet.exe`、`dist/Flipper-Pet-Windows-arm64.zip`
+- Windows ARM64：`dist/FlipperPet.exe`、`dist/Flipper-Pet-Windows-arm64.zip`
 - Flipper 应用：`flipper/dist/ai_pet.fap`
 
 ## 2. 使用前准备
@@ -31,6 +31,9 @@
 4. 打开本地控制台：`http://127.0.0.1:8781/`
 
 ### Windows
+
+当前仓库内置的 Windows 桌面程序为 ARM64 版本，更适合 Windows on ARM 设备。面向主流 Intel / AMD 电脑发布时，建议额外提供 Windows x86_64 构建。
+如果手边没有 Windows x64 电脑，可以使用仓库内的 GitHub Actions 工作流在线构建 Windows x64 安装包。
 
 可选两种方式：
 
@@ -135,5 +138,5 @@
 ### Windows
 
 ```powershell
-./packaging/build_windows.ps1
+./packaging/build_windows.ps1 -Arch x64
 ```

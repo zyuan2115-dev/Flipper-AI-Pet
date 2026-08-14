@@ -5,7 +5,7 @@
 This repository already includes ready-to-use artifacts:
 
 - macOS: `dist/Flipper Pet.app`, `dist/Flipper-Pet-macOS-arm64.dmg`
-- Windows: `dist/FlipperPet.exe`, `dist/Flipper-Pet-Windows-arm64.zip`
+- Windows ARM64: `dist/FlipperPet.exe`, `dist/Flipper-Pet-Windows-arm64.zip`
 - Flipper app: `flipper/dist/ai_pet.fap`
 
 ## 2. Requirements
@@ -31,6 +31,9 @@ This repository already includes ready-to-use artifacts:
 4. Open the local console at `http://127.0.0.1:8781/`
 
 ### Windows
+
+The bundled Windows desktop build in this repository is currently ARM64, intended for Windows on ARM. For mainstream Intel / AMD PCs, you should also publish a separate Windows x64 build.
+If you do not have a local Windows x64 machine, use the GitHub Actions workflow in this repository to build the Windows x64 package online.
 
 Either:
 
@@ -135,5 +138,5 @@ These settings are stored on the computer, not inside the Flipper firmware.
 ### Windows
 
 ```powershell
-./packaging/build_windows.ps1
+./packaging/build_windows.ps1 -Arch x64
 ```
