@@ -26,6 +26,8 @@ target/
 !/dist/Flipper-Pet-macOS-arm64.dmg
 !/dist/Flipper-Pet-Windows-arm64.zip
 !/dist/FlipperPet.exe
+!/dist/Flipper-Pet-Windows-x64.zip
+!/dist/FlipperPet-Windows-x64.exe
 /nbdist/
 /.nb-gradle/
 build/

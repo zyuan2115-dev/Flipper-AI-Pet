@@ -22,28 +22,25 @@ Flipper AI Pet 用于连接 Flipper Zero 与桌面 AI 工具，通过灯光、�
 
 ## Downloads
 
-This repository currently includes these ready-to-use files:
-
 - macOS package: [dist/Flipper-Pet-macOS-arm64.dmg](dist/Flipper-Pet-macOS-arm64.dmg)
+- Windows x64 package: [dist/Flipper-Pet-Windows-x64.zip](dist/Flipper-Pet-Windows-x64.zip)
 - Windows ARM64 package: [dist/Flipper-Pet-Windows-arm64.zip](dist/Flipper-Pet-Windows-arm64.zip)
 - Flipper Zero app: [flipper/dist/ai_pet.fap](flipper/dist/ai_pet.fap)
 
 Optional raw desktop binaries:
 
 - macOS app bundle: [dist/Flipper Pet.app](dist/Flipper%20Pet.app)
+- Windows x64 executable: [dist/FlipperPet-Windows-x64.exe](dist/FlipperPet-Windows-x64.exe)
 - Windows ARM64 executable: [dist/FlipperPet.exe](dist/FlipperPet.exe)
 
-## Windows x64
+## Windows Architecture
 
-The bundled Windows desktop build in this repository is currently ARM64.
-
-For mainstream Intel / AMD Windows PCs, build a separate x64 package with GitHub Actions or a local Windows x64 environment.
-
-GitHub Actions workflow: [.github/workflows/build-windows-x64.yml](.github/workflows/build-windows-x64.yml)
+- Windows x64 is for mainstream Intel / AMD PCs.
+- Windows ARM64 is for Windows on ARM devices.
 
 ## Quick Start
 
-1. Install the desktop app on macOS or Windows.
+1. Install the desktop app for your operating system and processor architecture.
 2. Connect Flipper Zero over USB-C and install `ai_pet.fap` from the local Web console.
 3. Bind the computer once, then open `Apps -> Tools -> AI Pet` on the Flipper.
 4. Open the local console at `http://127.0.0.1:8781/`.
@@ -59,21 +56,13 @@ GitHub Actions workflow: [.github/workflows/build-windows-x64.yml](.github/workf
 
 ## Approval Modes
 
-The Web console supports three approval modes:
-
 - Full takeover
 - No takeover
 - Handoff takeover with custom timeout
 
 ## Custom Effects
 
-Each AI state can be customized from the desktop side with:
-
-- color
-- brightness
-- light behavior
-- auto-off timeout
-- sound behavior
+Each AI state can be customized from the desktop side with color, brightness, light behavior, auto-off timeout, and sound behavior.
 
 These settings are stored on the computer and sent to the Flipper when state changes occur.
 
@@ -97,13 +86,13 @@ Then open `http://127.0.0.1:8781/`.
 
 <img width="3000" height="1550" alt="image" src="https://github.com/user-attachments/assets/16c28db2-1f58-4c70-ad22-c03d425c0555" />
 
-<img width="1080" height="1920" alt="1f6177c37314eb70e7a11d77f0c7c81c" src="https://github.com/user-attachments/assets/82cc75ed-375a-482c-b3cb-40f288521666" />
+<img width="1080" height="1920" alt="image" src="https://github.com/user-attachments/assets/82cc75ed-375a-482c-b3cb-40f288521666" />
 
-<img width="1080" height="1920" alt="c7f2be355b2d5e42b6d0f4779b37219e" src="https://github.com/user-attachments/assets/bd544aac-fd19-46d5-a38c-d3dc69a26266" />
+<img width="1080" height="1920" alt="image" src="https://github.com/user-attachments/assets/bd544aac-fd19-46d5-a38c-d3dc69a26266" />
 
-<img width="1080" height="1920" alt="e1e1c96825cfb06f05d4468f59a36f9a" src="https://github.com/user-attachments/assets/9c593eb5-2fef-49e8-a789-79f0c5355803" />
+<img width="1080" height="1920" alt="image" src="https://github.com/user-attachments/assets/9c593eb5-2fef-49e8-a789-79f0c5355803" />
 
-<img width="1080" height="1920" alt="ecaf79482b634539cd8b41e69a9900ad" src="https://github.com/user-attachments/assets/7f909e07-5e7e-4ad7-9253-46564db4afd8" />
+<img width="1080" height="1920" alt="image" src="https://github.com/user-attachments/assets/7f909e07-5e7e-4ad7-9253-46564db4afd8" />
 
 <img width="596" height="792" alt="image" src="https://github.com/user-attachments/assets/ba47a471-0a14-4bab-9012-0e4def239894" />
 

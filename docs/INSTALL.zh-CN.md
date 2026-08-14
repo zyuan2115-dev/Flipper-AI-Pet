@@ -5,7 +5,8 @@
 本仓库已经包含可直接使用的发布产物：
 
 - macOS：`dist/Flipper Pet.app`、`dist/Flipper-Pet-macOS-arm64.dmg`
-- Windows ARM64：`dist/FlipperPet.exe`、`dist/Flipper-Pet-Windows-arm64.zip`
+* Windows x64（Intel / AMD）：`dist/FlipperPet-Windows-x64.exe`、`dist/Flipper-Pet-Windows-x64.zip`
+* Windows ARM64：`dist/FlipperPet.exe`、`dist/Flipper-Pet-Windows-arm64.zip`
 - Flipper 应用：`flipper/dist/ai_pet.fap`
 
 ## 2. 使用前准备
@@ -32,13 +33,12 @@
 
 ### Windows
 
-当前仓库内置的 Windows 桌面程序为 ARM64 版本，更适合 Windows on ARM 设备。面向主流 Intel / AMD 电脑发布时，建议额外提供 Windows x86_64 构建。
-如果手边没有 Windows x64 电脑，可以使用仓库内的 GitHub Actions 工作流在线构建 Windows x64 安装包。
+大多数 Intel / AMD Windows 电脑请选择 Windows x64 包。Windows ARM64 包仅适用于 Windows on ARM 设备。
 
 可选两种方式：
 
-1. 直接运行 `dist/FlipperPet.exe`
-2. 或解压 `dist/Flipper-Pet-Windows-arm64.zip` 后运行其中的程序和安装脚本
+1. Intel / AMD：直接运行 `dist/FlipperPet-Windows-x64.exe`，或解压 `dist/Flipper-Pet-Windows-x64.zip`
+2. Windows on ARM：直接运行 `dist/FlipperPet.exe`，或解压 `dist/Flipper-Pet-Windows-arm64.zip`
 
 启动后打开：`http://127.0.0.1:8781/`
 

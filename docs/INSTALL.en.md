@@ -5,7 +5,8 @@
 This repository already includes ready-to-use artifacts:
 
 - macOS: `dist/Flipper Pet.app`, `dist/Flipper-Pet-macOS-arm64.dmg`
-- Windows ARM64: `dist/FlipperPet.exe`, `dist/Flipper-Pet-Windows-arm64.zip`
+* Windows x64 (Intel / AMD): `dist/FlipperPet-Windows-x64.exe`, `dist/Flipper-Pet-Windows-x64.zip`
+* Windows ARM64: `dist/FlipperPet.exe`, `dist/Flipper-Pet-Windows-arm64.zip`
 - Flipper app: `flipper/dist/ai_pet.fap`
 
 ## 2. Requirements
@@ -32,13 +33,12 @@ This repository already includes ready-to-use artifacts:
 
 ### Windows
 
-The bundled Windows desktop build in this repository is currently ARM64, intended for Windows on ARM. For mainstream Intel / AMD PCs, you should also publish a separate Windows x64 build.
-If you do not have a local Windows x64 machine, use the GitHub Actions workflow in this repository to build the Windows x64 package online.
+For mainstream Intel / AMD PCs, use the Windows x64 package. The Windows ARM64 package is only for Windows on ARM devices.
 
 Either:
 
-1. run `dist/FlipperPet.exe`, or
-2. extract `dist/Flipper-Pet-Windows-arm64.zip` and run the packaged program
+1. Intel / AMD: run `dist/FlipperPet-Windows-x64.exe`, or extract `dist/Flipper-Pet-Windows-x64.zip`
+2. Windows on ARM: run `dist/FlipperPet.exe`, or extract `dist/Flipper-Pet-Windows-arm64.zip`
 
 Then open `http://127.0.0.1:8781/`.
 
