@@ -52,6 +52,8 @@ class FlipperStorage:
     def __enter__(self):
         self.port.open()
         time.sleep(0.5)
+        # Some firmware versions only print the CLI prompt after receiving input.
+        self.send("\r")
         self.read.until(self.PROMPT)
         self.port.reset_input_buffer()
         self.send("device_info\r")
