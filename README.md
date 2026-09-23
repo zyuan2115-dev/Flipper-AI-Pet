@@ -94,7 +94,6 @@ Then open `http://127.0.0.1:7800/`. / 然后打开 `http://127.0.0.1:7800/`。
 
 <img width="1080" height="1920" alt="Flipper AI Pet screen" src="https://github.com/user-attachments/assets/7f909e07-5e7e-4ad7-9253-46564db4afd8" />
 
-<img width="596" height="792" alt="Flipper AI Pet screen" src="https://github.com/user-attachments/assets/ba47a471-0a14-4bab-9012-0e4def239894" />
 
 ## License / 许可证
 
